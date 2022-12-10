@@ -1,0 +1,162 @@
+<%- include('header') %>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+              <h4 class="page-title">Form Basic</h4>
+              <div class="ms-auto text-end">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                      Library
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <form class="form-horizontal" action="/insertAdminRecord" method="post" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <% if(flash.success && flash.success.length >0 ){ %>
+                      <div class="alert alert-success">
+                         <%= flash.success %>
+                      </div>
+                    <% } %>
+                    <h4 class="card-title">Admin Info</h4>
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">First Name</label>
+                      <div class="col-sm-9">
+                        <input  type="text" class="form-control" name="fname" id="fname" placeholder="First Name Here"/>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">Last Name</label>
+                      <div class="col-sm-9">
+                        <input  type="text" class="form-control" name="lname" id="lname" placeholder="Last Name Here"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">Enter Email</label>
+                      <div class="col-sm-9">
+                        <input  type="email" class="form-control" name="email" id="email" placeholder="Enter Email"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">Enter password</label>
+                      <div class="col-sm-9">
+                        <input  type="password" class="form-control" name="password" id="password" placeholder="Enter password"/>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">select Gender</label>
+                      <div class="col-sm-9">
+                        <input  type="radio"  name="gender" id="gender" value="male"/>Male
+                        <input  type="radio"  name="gender" id="gender" value="female"/>Female
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">select Gender</label>
+                      <div class="col-sm-9">
+                        <input  type="checkbox"  name="hobby[]" id="hobby" value="Music"/>Music
+                        <input  type="checkbox"  name="hobby[]" id="hobby" value="Reading"/>Reading
+                        <input  type="checkbox"  name="hobby[]" id="hobby" value="Cycling"/>Cycling
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label for="fname"  class="col-sm-3 text-end control-label col-form-label">select City</label>
+                      <div class="col-sm-9">
+                        <% var city = ["Surat","vadodara","Rajkot"]%>
+                        <select name="city" class="form-control">
+                          <option value="">--select city--</option>
+                          <% for(var i=0; i<city.length; i++){ %>
+                            <option value="<%= city[i] %>"><%= city[i] %></option>
+                          <% } %>
+                        </select>
+                      </div>
+                    </div>
+                   
+                  
+                    
+                   
+                    <div class="form-group row">
+                      <label  for="cono1" class="col-sm-3 text-end control-label col-form-label" >Message</label >
+                      <div class="col-sm-9">
+                        <textarea class="form-control" name="message"></textarea>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label  for="cono1" class="col-sm-3 text-end control-label col-form-label" >Upload Profile pic</label >
+                      <div class="col-sm-9">
+                        <input type="file" name="avatar" class="form-control">
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="border-top">
+                    <div class="card-body">
+                      <input type="submit" name="submit" value="submit" class="btn btn-primary">
+                      
+                    </div>
+                  </div>
+                </form>
+              </div>
+            
+            </div>
+            
+          </div>
+          <!-- editor -->
+         
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          <!-- Right sidebar -->
+          <!-- ============================================================== -->
+          <!-- .right-sidebar -->
+          <!-- ============================================================== -->
+          <!-- End Right sidebar -->
+          <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+       <%- include('footer') %>
