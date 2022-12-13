@@ -41,6 +41,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
 app.use(customM.setFlash);
+
 app.use('/', require('./routes'));
 
 app.listen(port, function(err){

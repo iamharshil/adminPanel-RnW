@@ -43,4 +43,7 @@ route.get('/recoverPassword',AdminController.recoverPassword);
 route.post('/recoverPass',AdminController.recoverPass);
 //end routings
 
+route.use('/category',require('./category'));
+route.use('/subcategory', require('./subcategory'));
+
 module.exports = route;
